@@ -1,4 +1,4 @@
-# 🚗 MOTOR VEHICLE THEFTS – Write Up 🚗
+# 🚗 MOTOR VEHICLE THEFTS 🚗
 
 #### The Situation: You’ve just been hired as a Data Analyst for the Georgia police department to help raise awareness about motor vehicle thefts.
 
