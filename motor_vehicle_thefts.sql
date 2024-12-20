@@ -1,4 +1,6 @@
-
+/* 
+Motor Vehicle Thefts 
+*/
 
 -- OBJECTIVE #1: Identify WHEN vehicles are likely to be stolen
 SELECT * FROM locations;
