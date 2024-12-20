@@ -31,8 +31,6 @@ GROUP BY year_stolen, month_stolen, day_stolen
 ORDER BY year_stolen, month_stolen, day_stolen;
 
 -- The drop is because there is only 6 days worth of data in the 4th month (Apr)
--- Since this is NZ data, she said their summer is december thru march and that is prob what is happening 
-
 
 -- 3. Find the # of vehicles stolen each day of the week
 SELECT DAYOFWEEK(date_stolen) AS day_number, COUNT(vehicle_id) AS num_vehicles
@@ -53,9 +51,6 @@ COUNT(vehicle_id) AS num_vehicles
 FROM stolen_vehicles
 GROUP BY DAYOFWEEK(date_stolen), day_name
 ORDER BY day_number;
-
-
--- there is an accompanying bar chart visual in Excel for this output
 
 -- Objective #2 - Identify WHICH vehicles are likely to be stolen
 
@@ -171,9 +166,6 @@ GROUP BY vehicle_type
 ORDER BY num_vehicles DESC
 LIMIT 10;
 
--- Exported results and created a heat map in Excel to highlight the largest amounts
-
-
 -- Objective #3 - Identify WHERE vehicles are likely to be stolen
 
 -- 1. Find the number of vehicles that were stolen in each region (review table data)
@@ -184,8 +176,6 @@ SELECT * FROM locations;
 SELECT *
 FROM stolen_vehicles sv LEFT JOIN locations loc
 	ON sv.location_id = loc.location_id;
-
-
 
 -- Filter & group the data 
 SELECT loc.region, COUNT(vehicle_id) AS num_vehicles
@@ -241,7 +231,6 @@ FROM stolen_vehicles sv LEFT JOIN locations loc
     LIMIT 3;
 
 -- output here shows Stationwagons, Saloons and Utilities were the 3 most popular type of vehicle stolen in the 3 least dense regions.
-
 -- since the queries have the same fields, to see both sets of results, combine the two separate queries with a UNION, 
 -- add in descriptor column for easy visual identification & limit to top 5 for an even clearer result set
 
@@ -263,4 +252,3 @@ GROUP BY sv.vehicle_type
 ORDER BY num_vehicles DESC
 LIMIT 5);
 
--- 4. Create a scatterplot of population vs. density
